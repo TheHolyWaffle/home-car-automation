@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms and Privacy</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <h1>Terms &amp; privacy</h1>
+  <p class="muted">home-car-automation · last updated 28 October 2026</p>
+
+  <h2>What this is</h2>
+  <p>home-car-automation is a personal, non-commercial, self-hosted hobby project by Bert De Geyter
+    (private individual). It automates one privately owned car through the Volvo Cars Connected Vehicle API.
+    It is not affiliated with or endorsed by Volvo Cars, and it is not offered as a service to other users.</p>
+
+  <h2>What it does</h2>
+  <ul>
+    <li>Starts the engine on a user-defined schedule to precondition the cabin.</li>
+    <li>Locks the car when it has been left unlocked, closed and unused for a set time.</li>
+    <li>May use the car's location to only run these automations when it is parked at home.</li>
+  </ul>
+
+  <h2>Data</h2>
+  <p>To decide when to act, the service reads door, lock, odometer, engine status and location data.
+    These values are only held in memory and are not stored, logged in bulk or shared with anyone.
+    The only thing persisted is the OAuth token, on the owner's own machine.
+    You can revoke access at any time from your Volvo ID account.</p>
+
+  <h2>No warranty</h2>
+  <p>The software is provided as is, without warranty of any kind. Use it at your own risk and only where
+    running an engine unattended is safe and permitted.</p>
+
+  <h2>Contact</h2>
+  <p>Open an issue on <a href="https://github.com/TheHolyWaffle/home-car-automation/issues">GitHub</a>.</p>
+</main>
+</body>
+</html>

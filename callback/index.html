@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Login Code</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <h1 id="title">Login complete</h1>
+  <p id="intro" class="muted">Copy this command and run it where the service runs to finish linking your car.
+    The code is single-use and expires within minutes. It never leaves this page.</p>
+  <div class="code" id="box">
+    <input id="cmd" readonly aria-label="Auth command">
+    <button id="copy" type="button">Copy</button>
+  </div>
+  <p class="muted">Code only: <code id="code"></code></p>
+  <footer><a href="../">home-car-automation</a> · <a href="../terms/">Terms &amp; privacy</a></footer>
+</main>
+<script>
+  const q = new URLSearchParams(location.search);
+  const code = q.get("code");
+  const title = document.getElementById("title");
+  const intro = document.getElementById("intro");
+  if (code) {
+    document.getElementById("cmd").value = `docker compose run --rm volvo auth '${code}'`;
+    document.getElementById("code").textContent = code;
+  } else {
+    title.textContent = "No login code";
+    intro.textContent = q.get("error")
+      ? `Volvo returned an error: ${q.get("error")} ${q.get("error_description") || ""}`
+      : "This page receives the code after logging in with your Volvo ID. Start with the auth command.";
+    document.getElementById("box").hidden = true;
+    document.getElementById("code").parentElement.hidden = true;
+  }
+  history.replaceState(null, "", location.pathname);
+  document.getElementById("copy").onclick = async (e) => {
+    await navigator.clipboard.writeText(document.getElementById("cmd").value);
+    e.target.textContent = "Copied";
+  };
+</script>
+</body>
+</html>
