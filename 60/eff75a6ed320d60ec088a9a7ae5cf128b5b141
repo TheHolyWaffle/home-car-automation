@@ -1,0 +1,20 @@
+callback/index.html
+  h_473ac588a35cb4 1-45
+index.html
+  h_473ac588a35cb4 1-17
+style.css
+  h_473ac588a35cb4 1-63
+terms/index.html
+  h_473ac588a35cb4 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "60eff75a6ed320d60ec088a9a7ae5cf128b5b141",
+  "prompts": {},
+  "humans": {
+    "h_473ac588a35cb4": {
+      "author": "TheHolyWaffle <787914+TheHolyWaffle@users.noreply.github.com>"
+    }
+  }
+}
